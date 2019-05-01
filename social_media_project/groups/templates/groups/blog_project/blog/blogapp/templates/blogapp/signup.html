@@ -1,0 +1,24 @@
+{% extends 'blogapp/base.html' %}
+{% block body_block %}
+
+<div class="jumbotron">
+  {% if registered %}
+    <h2 style="font-family: 'Special Elite', cursive;">Thank you for registering!</h2>
+    {% else %}
+      <h3 style="font-family: 'Special Elite', cursive;">Please fill out the form below to Signup:</h3>
+      <form class="signup_form" method="POST">
+        {% csrf_token %}
+        {{ Userform.as_p }}
+        <input type="submit" class="btn btn-primary" name="" value="Signup">
+
+      </form>
+    {% endif %}
+
+
+
+
+</div>
+
+
+
+{% endblock %}

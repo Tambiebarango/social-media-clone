@@ -1,0 +1,30 @@
+{% extends "blogapp/base.html" %}
+
+{% block body_block %}
+
+<div class="jumbotron">
+  <h3 style="font-family: 'Special Elite', cursive;">Please fill out the form below to login:</h3>
+
+  <!-- {% if form.errors %}
+    <p>Your username and password didn't match! Please try again.</p>
+  {% endif %}
+  <form class=""  action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class='btn btn-primary'   name="" value="Login">
+    <input type="hidden" name="next" value="{{next}}">
+
+  </form> -->
+  <form class=""  method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" value="" placeholder="Enter username here">
+
+    <label for="password">Password:</label>
+    <input type="password" name="password" value="">
+
+    <input type="submit" class="btn btn-primary" name="" value="Login">
+
+  </form>
+</div>
+{% endblock %}
